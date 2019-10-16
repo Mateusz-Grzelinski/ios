@@ -141,16 +141,31 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peh-Of-8o9">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
                                         <state key="normal" title="Previous day"/>
+                                        <connections>
+                                            <action selector="previousDay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Gn-Wb-bXF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hB5-CI-Zwv">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
                                         <state key="normal" title="Next day"/>
+                                        <connections>
+                                            <action selector="nextDay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3lG-zP-QL5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cCO-RX-BwP"/>
                     </stackView>
+                    <connections>
+                        <outlet property="pressure" destination="QFO-JY-rT1" id="5iw-Bw-29S"/>
+                        <outlet property="rain" destination="kp3-BX-7J8" id="9gV-DH-dPw"/>
+                        <outlet property="tempMax" destination="maD-zV-C80" id="Hrz-An-w1V"/>
+                        <outlet property="tempMin" destination="Alv-cj-err" id="HY5-4r-E51"/>
+                        <outlet property="weatherIcon" destination="Kvj-1k-VCT" id="NXy-U6-Syg"/>
+                        <outlet property="windDirection" destination="bQA-g1-CQ2" id="nxX-uX-VRS"/>
+                        <outlet property="windVelocity" destination="EAt-Cy-Qit" id="rzy-pB-pNz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
