@@ -28,12 +28,11 @@ struct Pogoda {
 
   static func getData (latitude: String, longitude: String, completion: @escaping ([Pogoda]?) -> ()) {
 
-    let API_PATH = "https://api.darksky.net/forecast/23a47f99989a11f4a6a3494dd8c5cbfa/"
-
-    let url = API_PATH + "\(latitude),\(longitude)?exclude=currently,minutely,hourly&units=si"
+    let API_PATH = "https://api.darksky.net/forecast/13066f8bc7d489b2e2f550c8237de8c4/" + "\(latitude),\(longitude)i"
     let request = URLRequest(url: URL(string: url)!)
 
-    let task = URLSession.shared.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
+    let task = URLSession.shared.dataTask(with: request) 
+    { (data:Data?, response:URLResponse?, error:Error?) in
       var forecastArray:[Pogoda] = []
       if let data = data {
         do {
