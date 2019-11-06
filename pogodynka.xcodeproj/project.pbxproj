@@ -104,10 +104,10 @@
 				AC01A3CF23577AD4009842B8 /* AppDelegate.swift */,
 				AC01A3D123577AD4009842B8 /* DetailViewController.swift */,
 				AC2D685D2360B4E60098E1EC /* Weather.swift */,
-				AC01A3D323577AD4009842B8 /* Main.storyboard */,
 				ACCA7126237318E600BFF7A9 /* MasterViewController.swift */,
-				AC01A3D623577ADA009842B8 /* Assets.xcassets */,
+				AC01A3D323577AD4009842B8 /* Main.storyboard */,
 				AC01A3D823577ADA009842B8 /* LaunchScreen.storyboard */,
+				AC01A3D623577ADA009842B8 /* Assets.xcassets */,
 				AC01A3DB23577ADA009842B8 /* Info.plist */,
 			);
 			path = pogodynka;

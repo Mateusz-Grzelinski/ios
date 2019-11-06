@@ -12,7 +12,7 @@ import CoreLocation
 
 class MasterViewController: UITableViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var citySearchBar: UISearchBar!
+    //@IBOutlet weak var citySearchBar: UISearchBar!
     
     var detailViewController: DetailViewController? = nil
     var weatherArray = [[Weather]]()
@@ -26,7 +26,7 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         getLocationWeather(cityName: "Melbourne")
         getLocationWeather(cityName: "Novosibirsk")
         
-        citySearchBar.delegate = self
+        //citySearchBar.delegate = self
         
         navigationItem.leftBarButtonItem = editButtonItem
         
@@ -36,12 +36,12 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        if let location = searchBar.text, !location.isEmpty {
-            getLocationWeather(cityName: location)
-        }
-    }
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        searchBar.resignFirstResponder()
+//        if let location = searchBar.text, !location.isEmpty {
+//            getLocationWeather(cityName: location)
+//        }
+//    }
     
     func getLocationWeather(cityName: String) {
         CLGeocoder().geocodeAddressString(cityName) {
@@ -70,11 +70,8 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC = segue.destination as! UINavigationController
-        
         let tableVC = navVC.viewControllers.first as! DetailViewController
-        
         let index = tableView.indexPathForSelectedRow?.row
-        
         tableVC.weatherData = weatherArray[index!]
         
     }

@@ -187,7 +187,9 @@
                         <outlet property="city" destination="blC-Gr-WSf" id="1hB-Dc-Zbv"/>
                         <outlet property="date" destination="jbV-Tn-0mp" id="rby-oS-jI0"/>
                         <outlet property="iconName" destination="2gv-6D-2yP" id="U1J-Wu-Gcf"/>
+                        <outlet property="nextButton" destination="bRo-ro-ex5" id="8Iz-ZB-217"/>
                         <outlet property="pressure" destination="zeQ-VH-POH" id="eXx-h6-84C"/>
+                        <outlet property="prevButton" destination="Dwm-jZ-ZnL" id="RSr-Sh-Y0l"/>
                         <outlet property="rain" destination="sjp-xj-oXr" id="fcq-Op-VO9"/>
                         <outlet property="tempMax" destination="2Fp-hP-Fyr" id="PGl-dM-D5L"/>
                         <outlet property="tempMin" destination="4jM-RX-zPd" id="LSj-4y-afp"/>
@@ -214,26 +216,26 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MO0-mq-3Az">
+                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="oJ0-1E-M2G" detailTextLabel="4xR-Ec-PUJ" style="IBUITableViewCellStyleValue1" id="MO0-mq-3Az">
                                 <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MO0-mq-3Az" id="6NU-uf-41n">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23T-C0-3f5">
-                                            <rect key="frame" x="16" y="11" width="34" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oJ0-1E-M2G">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrF-eS-A0j">
-                                            <rect key="frame" x="95" y="12" width="205" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4xR-Ec-PUJ">
+                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -243,7 +245,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="delegate" destination="vnB-zf-dRz" id="LlA-OB-1x2"/>
+                            <outlet property="dataSource" destination="fjO-Rq-KbL" id="0HM-4t-eRA"/>
+                            <outlet property="delegate" destination="fjO-Rq-KbL" id="0LZ-Vy-IyO"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mateusz Grzelinski - table" id="PAz-to-h6Z"/>

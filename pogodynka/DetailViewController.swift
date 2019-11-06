@@ -22,29 +22,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var city: UILabel!
     
-    @IBOutlet weak var previousButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.previousButton.isEnabled = false
-        // Do any additional setup after loading the view.
-        configureView()
-        
-        reloadWeather(i: self.i)
-        Weather.getData(latitude: "19.9872", city: "None", longitude: "50.0527", completion:{ (results:[Weather]?) in
-            if let weatherData = results {
-                self.weatherData = weatherData
-                DispatchQueue.main.async {
-                    self.reloadWeather(i: self.i)
-                }
-                
-            }
-        })
-    }
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     func configureView() {
         // Update the user interface for the detail item.
@@ -54,6 +34,17 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view.
+        configureView()
+        //self.previousButton.isEnabled = false
+        
+        reloadWeather(i: self.i)
+    }
+    
 
     
     var detailItem: NSDate? {
@@ -86,6 +77,7 @@ class DetailViewController: UIViewController {
         self.rain.text = String(self.weatherData[i].rain)
         self.pressure.text = String(self.weatherData[i].pressure)
         self.city.text = String(self.weatherData[i].city)
+        self.date.text = self.formatDate(unixtimeInterval: self.weatherData[i].timeStamp)
     }
     
     func formatDate(unixtimeInterval: Double) -> String {
