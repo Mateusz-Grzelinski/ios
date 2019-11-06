@@ -75,7 +75,7 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         
         let index = tableView.indexPathForSelectedRow?.row
         
-        tableVC.data = weatherArray[index!]
+        tableVC.weatherData = weatherArray[index!]
         
     }
     

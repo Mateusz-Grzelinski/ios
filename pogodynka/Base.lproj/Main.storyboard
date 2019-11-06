@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mateusz Grzelinski - details-->
+        <!--Detail table-->
         <scene sceneID="tgk-PH-0cz">
             <objects>
-                <viewController id="waR-Qv-cNf" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController id="waR-Qv-cNf" userLabel="Detail table" customClass="DetailViewController" customModule="pogodynka" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VzF-z6-X91">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="2026" y="860"/>
         </scene>
-        <!--Mateusz Grzelinski - table-->
+        <!--Master table-->
         <scene sceneID="NCZ-bu-mcw">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="fjO-Rq-KbL" customClass="MasterViewController" customModule="pogodynka" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="fjO-Rq-KbL" userLabel="Master table" customClass="MasterViewController" customModule="pogodynka" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVZ-3N-nAP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,18 +237,20 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pcB-4q-KfK" kind="showDetail" id="8OE-05-Tbs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="fjO-Rq-KbL" id="rda-p1-d1q"/>
-                            <outlet property="delegate" destination="fjO-Rq-KbL" id="xMB-y5-Nzl"/>
+                            <outlet property="delegate" destination="vnB-zf-dRz" id="LlA-OB-1x2"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mateusz Grzelinski - table" id="PAz-to-h6Z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cie-bP-R8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="174"/>
+            <point key="canvasLocation" x="1988" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZYD-PE-jBV">
@@ -280,7 +282,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujM-Ao-eOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="814"/>
+            <point key="canvasLocation" x="726" y="860"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="j4p-xd-vnS">
@@ -296,4 +298,7 @@
             <point key="canvasLocation" x="-159" y="511"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8OE-05-Tbs"/>
+    </inferredMetricsTieBreakers>
 </document>

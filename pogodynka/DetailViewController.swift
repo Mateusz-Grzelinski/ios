@@ -9,24 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-  var weatherData: [Weather] = []
-  var i: Int = 0
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        Weather.getData(latitude: "19.9872", city: "None", longitude: "50.0527", completion:{ (results:[Weather]?) in
-            if let weatherData = results {
-                self.weatherData = weatherData
-                DispatchQueue.main.async {
-                    self.reloadWeather(i: self.i)
-                }
-                
-            }
-        })
-    }
-
+    var weatherData: [Weather] = []
+    var i: Int = 0
     @IBOutlet weak var iconName: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var tempMin: UILabel!
@@ -38,19 +22,59 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var city: UILabel!
     
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.previousButton.isEnabled = false
+        // Do any additional setup after loading the view.
+        configureView()
+        
+        reloadWeather(i: self.i)
+        Weather.getData(latitude: "19.9872", city: "None", longitude: "50.0527", completion:{ (results:[Weather]?) in
+            if let weatherData = results {
+                self.weatherData = weatherData
+                DispatchQueue.main.async {
+                    self.reloadWeather(i: self.i)
+                }
+                
+            }
+        })
+    }
+    
+    func configureView() {
+        // Update the user interface for the detail item.
+        if let detail = detailItem {
+            if let label = detailDescriptionLabel {
+                label.text = detail.description
+            }
+        }
+    }
+
+    
+    var detailItem: NSDate? {
+        didSet {
+            // Update the view.
+            configureView()
+        }
+    }
     @IBAction func previousDay(_ sender: Any) {
-       if(self.i < self.weatherData.count - 1) {
+        if(self.i < self.weatherData.count - 1) {
             self.i += 1
             self.reloadWeather(i: self.i)
         }
     }
     @IBAction func nextDay(_ sender: Any) {
-       if(self.i > 0) {
+        if(self.i > 0) {
             self.i -= 1
             self.reloadWeather(i: self.i)
         }
     }
-
+    
     func reloadWeather(i: Int) {
         //self.??.text = self.formatDate(self.weatherData[i].timeStamp)
         self.weatherIcon.image = UIImage(named: self.weatherData[i].iconName)
@@ -70,6 +94,6 @@ class DetailViewController: UIViewController {
         dateFormatter.dateFormat = "dd-MM-yyyy"
         return dateFormatter.string(from: Date(timeIntervalSince1970: unixtimeInterval))
     }
-
+    
 }
 
