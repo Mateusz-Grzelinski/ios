@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AC01A3D023577AD4009842B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01A3CF23577AD4009842B8 /* AppDelegate.swift */; };
-		AC01A3D223577AD4009842B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01A3D123577AD4009842B8 /* ViewController.swift */; };
+		AC01A3D223577AD4009842B8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01A3D123577AD4009842B8 /* DetailViewController.swift */; };
 		AC01A3D523577AD4009842B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC01A3D323577AD4009842B8 /* Main.storyboard */; };
 		AC01A3D723577ADA009842B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC01A3D623577ADA009842B8 /* Assets.xcassets */; };
 		AC01A3DA23577ADA009842B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC01A3D823577ADA009842B8 /* LaunchScreen.storyboard */; };
 		AC01A3E523577ADA009842B8 /* pogodynkaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01A3E423577ADA009842B8 /* pogodynkaTests.swift */; };
 		AC01A3F023577ADA009842B8 /* pogodynkaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01A3EF23577ADA009842B8 /* pogodynkaUITests.swift */; };
-		AC2D685E2360B4E60098E1EC /* Pogoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D685D2360B4E60098E1EC /* Pogoda.swift */; };
+		AC2D685E2360B4E60098E1EC /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D685D2360B4E60098E1EC /* Weather.swift */; };
+		ACCA7127237318E600BFF7A9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA7126237318E600BFF7A9 /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		AC01A3CC23577AD4009842B8 /* pogodynka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pogodynka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC01A3CF23577AD4009842B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC01A3D123577AD4009842B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC01A3D123577AD4009842B8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AC01A3D423577AD4009842B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC01A3D623577ADA009842B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC01A3D923577ADA009842B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,7 +49,8 @@
 		AC01A3EB23577ADA009842B8 /* pogodynkaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pogodynkaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC01A3EF23577ADA009842B8 /* pogodynkaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pogodynkaUITests.swift; sourceTree = "<group>"; };
 		AC01A3F123577ADA009842B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC2D685D2360B4E60098E1EC /* Pogoda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pogoda.swift; sourceTree = "<group>"; };
+		AC2D685D2360B4E60098E1EC /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		ACCA7126237318E600BFF7A9 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				AC01A3CF23577AD4009842B8 /* AppDelegate.swift */,
-				AC01A3D123577AD4009842B8 /* ViewController.swift */,
-				AC2D685D2360B4E60098E1EC /* Pogoda.swift */,
+				AC01A3D123577AD4009842B8 /* DetailViewController.swift */,
+				AC2D685D2360B4E60098E1EC /* Weather.swift */,
 				AC01A3D323577AD4009842B8 /* Main.storyboard */,
+				ACCA7126237318E600BFF7A9 /* MasterViewController.swift */,
 				AC01A3D623577ADA009842B8 /* Assets.xcassets */,
 				AC01A3D823577ADA009842B8 /* LaunchScreen.storyboard */,
 				AC01A3DB23577ADA009842B8 /* Info.plist */,
@@ -259,8 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2D685E2360B4E60098E1EC /* Pogoda.swift in Sources */,
-				AC01A3D223577AD4009842B8 /* ViewController.swift in Sources */,
+				AC2D685E2360B4E60098E1EC /* Weather.swift in Sources */,
+				ACCA7127237318E600BFF7A9 /* MasterViewController.swift in Sources */,
+				AC01A3D223577AD4009842B8 /* DetailViewController.swift in Sources */,
 				AC01A3D023577AD4009842B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

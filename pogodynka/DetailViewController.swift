@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-  var weatherData: [Pogoda] = []
+class DetailViewController: UIViewController {
+  var weatherData: [Weather] = []
   var i: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        Pogoda.getData(latitude: "19.9872", longitude: "50.0527", completion:{ (results:[Pogoda]?) in
+        Weather.getData(latitude: "19.9872", city: "None", longitude: "50.0527", completion:{ (results:[Weather]?) in
             if let weatherData = results {
                 self.weatherData = weatherData
                 DispatchQueue.main.async {
@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var windDirection: UILabel!
     @IBOutlet weak var rain: UILabel!
     @IBOutlet weak var pressure: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var city: UILabel!
     
     @IBAction func previousDay(_ sender: Any) {
        if(self.i < self.weatherData.count - 1) {
@@ -59,6 +61,7 @@ class ViewController: UIViewController {
         self.windDirection.text = String(self.weatherData[i].windDirection)
         self.rain.text = String(self.weatherData[i].rain)
         self.pressure.text = String(self.weatherData[i].pressure)
+        self.city.text = String(self.weatherData[i].city)
     }
     
     func formatDate(unixtimeInterval: Double) -> String {

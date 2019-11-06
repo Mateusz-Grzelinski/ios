@@ -2,7 +2,7 @@
 import Foundation
 import CoreLocation
 
-struct Pogoda {
+struct Weather {
     let weatherType:String
     let tempMax:Double
     let tempMin:Double
@@ -12,8 +12,9 @@ struct Pogoda {
     let pressure:Double
     let iconName:String
     let timeStamp:Double
+    let city: String
     
-    init(json:[String:Any]) {
+    init(json:[String:Any], city:String) {
         self.weatherType = json["summary"] as! String
         self.tempMax = json["temperatureMax"] as! Double
         self.tempMin = json["temperatureMin"] as! Double
@@ -23,17 +24,18 @@ struct Pogoda {
         self.pressure = json["pressure"] as! Double
         self.iconName = json["icon"] as! String
         self.timeStamp = json["time"] as! Double
+        self.city = city
     }
     
     
-    static func getData (latitude: String, longitude: String, completion: @escaping ([Pogoda]?) -> ()) {
+    static func getData (latitude: String, city:String, longitude: String, completion: @escaping ([Weather]?) -> ()) {
         
         let API_PATH = "https://api.darksky.net/forecast/13066f8bc7d489b2e2f550c8237de8c4/\(latitude),\(longitude)"
         let request = URLRequest(url: URL(string: API_PATH)!)
         
         let task = URLSession.shared.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
-        
-        var forecastArray:[Pogoda] = []
+    
+        var forecastArray:[Weather] = []
         
         if let data = data {
             
@@ -42,7 +44,7 @@ struct Pogoda {
                     if let dailyForecasts = json["daily"] as? [String:Any] {
                         if let dailyData = dailyForecasts["data"] as? [[String:Any]] {
                             for dataPoint in dailyData {
-                                if let weatherObject = try? Pogoda(json: dataPoint) {
+                                if let weatherObject = try? Weather(json: dataPoint, city: city) {
                                     forecastArray.append(weatherObject)
                                 }
                             }
